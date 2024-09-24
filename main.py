@@ -82,8 +82,8 @@ def set_taken_time_on_database(compartment):
 
     doc_ref = db.collection('TabelaRemedios').where('compartimento', '==', f'{compartment}').get()[0].reference
     doc_ref.update({
-        'horario_tomado': current_date,
-        'dia_tomado': current_time
+        'horario_tomado': current_time,
+        'dia_tomado': current_date
     })
     print(f"Compartment number {compartment} successfully updated!")
 
